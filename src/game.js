@@ -94,12 +94,12 @@ var loop = kontra.gameLoop({
         }
         // bottom border
         if (sprite.y > height_border - sprite.height){
-            sprite.y = height_border - sprite.height
+            sprite.y = height_border - sprite.width
             // console.log("GG")
         }
         // top border
         if (sprite.y < sprite.height){
-            sprite.y = sprite.height
+            sprite.y = sprite.width
             // console.log("GG")
         }
         // Screen Size Alert so you can't play if the screen is less then 300 * 300
