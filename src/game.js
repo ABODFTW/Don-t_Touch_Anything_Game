@@ -4,6 +4,8 @@ game_canvas.height = window.window.innerHeight - 150;
 
 kontra.init();
 
+
+let level = 0
 let sprite = kontra.sprite({
     // all of these settings are responsive 
     x: game_canvas.width / 2,
@@ -109,15 +111,38 @@ var loop = kontra.gameLoop({
         }
         // update game size 
         game_canvas.width = window.window.innerWidth;
-        game_canvas.height = window.window.innerHeight -150 ;
+        game_canvas.height = window.window.innerHeight -150;
+        if ( width_border != game_canvas.width || height_border != game_canvas.height){
+            // update the collision borders
+            width_border = game_canvas.width;
+            height_border = game_canvas.height;
+            // update player size 
+            sprite.width = game_canvas.width / 40
+            sprite.height = game_canvas.height / 20
+            // update eneimes sizes 
+            // upper lett enemy  
+            enemies[0].width = game_canvas.width / 6
+            enemies[0].height = game_canvas.width / 6
+            // upper right enemy 
+            enemies[1].width = game_canvas.width / 6
+            enemies[1].height = game_canvas.height / 12
+            // bottom left 
+            enemies[2].width = game_canvas.width / 7 
+            enemies[2].height = game_canvas.width / 7 
+            // bottom right 
+            enemies[3].width = game_canvas.width / 24
+            enemies[3].height = game_canvas.height / 6
+
+            // alert("Screen Size Changed")
+        }
         //update borders if screen size changed
-        width_border = game_canvas.width;
-        height_border = game_canvas.height;
         // update player size if screen changed whil playing 
         // sprite.width = game_canvas.width / 20;
         // sprite.height = game_canvas.width / 20;
         // enemies logic 
         enemies.forEach(function(enemy){
+            // bouncing speed for enemies
+            // this will be updated for every level 
             if (enemy.collidesWith(sprite)){
                 // loop.stop()
                 // alert("GG")
