@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Watch Out</title>
+    <style>
+        canvas{
+            height: 100%;
+            width: 100%;
+            background:white;
+            margin:auto;
+            padding: 0;
+            border-style: solid;
+            display: block;
+            z-index: 0;
+        }
+        h1{
+            text-align: center;   
+            user-select: none;
+        }
+        .timer{
+            text-align: center;
+            font-weight: bold;
+            font-size: 14pt;
+            user-select: none;
+        }
+        .container{
+            display: block;
+            margin: auto;
+            background: #333;
+            position: static;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Don't Touch Anything!</h1>
+    <p class="timer">20 Sec</p>
+    <canvas id="game" width="1366" height="768"></canvas>
+
+
+    <script src="/lib/kontra.min.js"></script>
+    <script src="/src/game.js"></script>
+</body>
+</html>
